@@ -1,0 +1,26 @@
+<h2>Mon répertoire téléphonique</h2>
+<div class="row">
+    <div class="col-md-offset-1 col-md-11">
+        <h2>Ajout d'un contact</h2>
+        <form class="form-inline">
+            <div class="form-group">
+                <input class="form-control" type="text" ng-model='vm.contact.nom' placeholder="Nom"/>
+                <input class="form-control" type="text" ng-model='vm.contact.numero' placeholder="Numéro"/>
+            </div>
+            <button ng-click='vm.create()' class="btn btn-default">Ajout</button>
+        </form>
+        <h2 ng-show='vm.contacts.length>0'>Mes {{ vm.contacts.length }} contact(s)</h2>
+        <div class="panel panel-default" ng-repeat='contact in vm.contacts'>
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input class="form-control" type="text" ng-model='contact.nom'>
+                        <input class="form-control" type="text" ng-model='contact.numero'/>
+                        <button ng-click='vm.update(contact)' class="btn btn-default">Edition</button>
+                        <button ng-click='vm.delete(contact)' class="btn btn-danger">Suppression</button>
+                    </div>
+                </form>
+
+        </div>
+    </div>
+</div>
